@@ -1,7 +1,8 @@
+[Oo]bj/
+[Bb]in/
+
 /[Ll]ibrary/
 /[Tt]emp/
-/[Oo]bj/
-/[Bb]in/
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
@@ -31,3 +32,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+

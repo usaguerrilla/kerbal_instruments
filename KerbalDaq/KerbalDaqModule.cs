@@ -1,11 +1,13 @@
 ﻿using System;
 
-using UnityEngine;
-
 using KSP.UI.Screens;
 
 public class KerbalDaqModule : PartModule
 {
+    public KerbalDaqModule()
+    {
+    }
+
     private void OnVesselRecovered(ProtoVessel vessel, bool flag)
     {
         if (this.vesselId == null || vessel == null || vessel.vesselRef == null || vessel.vesselRef.id != this.vesselId)
@@ -18,8 +20,13 @@ public class KerbalDaqModule : PartModule
 
     public override void OnCopy(PartModule fromModule)
     {
-        this.vesselId = ((KerbalDaqModule) fromModule).vesselId;
-        this.numberOfRecordedParameters = ((KerbalDaqModule) fromModule).numberOfRecordedParameters;
+        this.vesselId = ((KerbalDaqModule)fromModule).vesselId;
+        this.numberOfRecordedParameters = ((KerbalDaqModule)fromModule).numberOfRecordedParameters;
+    }
+
+    public override void OnActive()
+    {
+        IsRecording = true;
     }
 
     public void OnDisable()
@@ -104,23 +111,17 @@ public class KerbalDaqModule : PartModule
         }
     }
 
-    [KSPEvent(name = "ToggleRecordingRecording", guiName = "Start Recording", requireFullControl = true, guiActive = true, active = true)]
-    public void ToggleRecordingRecording()
-    {
-        Events["ToggleRecordingRecording"].guiName = this.isRecording ? "Stop Recording" : "Start Recording";
-        this.isRecording = !this.isRecording;
-    }
+    [KSPField(isPersistant = false, guiName = "Data", guiActive = false, guiActiveEditor = true)]
+    [UI_ChooseOption(scene = UI_Scene.Editor, options = new string[] { "Total Mass", "Thrust", "Velocity", "Acceleration", "Staging" }, display = new string[] { "Total Mass", "Thrust", "Velocity", "Accel.", "Staging" })]
+    public string DataToRecord = "Acceleration";
 
-    [KSPField(isPersistant = false, guiName = "test", guiActiveEditor = true, guiActive = true)]
-    public bool Test;
+    [KSPField(isPersistant = false, guiName = "Recorder Status", guiActive = true, guiActiveEditor = false)]
+    [UI_Toggle(scene = UI_Scene.Flight, enabledText = "Recording", disabledText = "Idle")]
+    public bool IsRecording = false;
 
-    [KSPField(isPersistant = false, guiName = "test1", guiActiveEditor = true, guiActive = true)]
-    [UI_FloatRange﻿(stepIncrement = 0.5f, maxValue = 100f, minValue = 0f)]
-    public float Test1 = 20;
-
-    [KSPField(isPersistant = false, guiName = "test2", guiActiveEditor = true, guiActive = true)]
-    [UI_ProgressBar(maxValue = 100f, minValue = 0f)]
-    public float Test2 = 30;
+    [KSPField(isPersistant = false, guiName = "Memory Usage %", guiActive = true, guiActiveEditor = false)]
+    [UI_ProgressBar(scene = UI_Scene.Flight, minValue = 0f, maxValue = 100f)]
+    public float MemoryUsage = 0.0f;
 
     [KSPField(isPersistant = true)]
     public int numberOfRecordedParameters;
@@ -132,7 +133,6 @@ public class KerbalDaqModule : PartModule
 
     private StageIcon stagingIcon;
 
-    private bool isRecording;
     private bool stagingRegistered;
     private bool vesselEventsRegistered;
 }
