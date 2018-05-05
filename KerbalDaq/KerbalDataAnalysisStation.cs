@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
 using KSP.UI.Screens;
-using System;
+
+using KSPAssets;
+using KSPAssets.Loaders;
 
 namespace KerbalInstruments.KerbalDaq
 {
@@ -77,8 +79,19 @@ namespace KerbalInstruments.KerbalDaq
 
         private void OnOpenDataScienceStation()
         {
+            foreach (BundleDefinition bd in AssetLoader.BundleDefinitions)
+            {
+                if (bd.name.ToLower().Contains("kerbalinstruments"))
+                {
+                    AssetLoader.LoadAssets(AssetLoaded, AssetLoader.GetAssetDefinitionWithName(bd.name, "ui_canvas"));
+                }
+            }
             // TODO
             Debug.Log(">>>> KerbalDataAnalysisStation::OnOpenDataScienceStation: " + GetHashCode());
+        }
+
+        private void AssetLoaded(AssetLoader.Loader obj)
+        {
         }
 
         private void OnCloseDataScienceStation()
