@@ -29,6 +29,7 @@ namespace KerbalInstruments.KerbalDaq
 
         public void OnDisable()
         {
+            OnCloseDataScienceStation();
             UnregisterEvents();
         }
 
@@ -79,32 +80,53 @@ namespace KerbalInstruments.KerbalDaq
 
         private void OnOpenDataScienceStation()
         {
-            foreach (BundleDefinition bd in AssetLoader.BundleDefinitions)
+            if (this.dataScienceStationGameObject == null)
             {
-                if (bd.name.ToLower().Contains("kerbalinstruments"))
+                AssetLoader.LoadAssets(AssetLoaded, new AssetDefinition[]
                 {
-                    AssetLoader.LoadAssets(AssetLoaded, AssetLoader.GetAssetDefinitionWithName(bd.name, "ui_canvas"));
-                }
+                    AssetLoader.GetAssetDefinitionWithName(BUNDLE_NAME, OBJ_KERBAL_DATA_ITEM),
+                    AssetLoader.GetAssetDefinitionWithName(BUNDLE_NAME, OBJ_KERBAL_DATA_ITEM_POOL),
+                    AssetLoader.GetAssetDefinitionWithName(BUNDLE_NAME, OBJ_KERBAL_DATA_SCIENCE_STATION),
+                });
             }
-            // TODO
-            Debug.Log(">>>> KerbalDataAnalysisStation::OnOpenDataScienceStation: " + GetHashCode());
+            else if (!this.dataScienceStationGameObject.activeSelf)
+            {
+                this.dataScienceStationGameObject.SetActive(true);
+            }
         }
 
         private void AssetLoaded(AssetLoader.Loader obj)
         {
+            GameObject go = Instantiate(obj.objects[0]) as GameObject;
+            KerbalDataItem kdi = go.GetComponent<KerbalDataItem>();
+
+            Vector3 pos = this.applicationLauncherButton.GetAnchor();
+            this.dataScienceStationGameObject = Instantiate(obj.objects[2]) as GameObject;
+            this.dataScienceStationGameObject.transform.SetParent(MainCanvasUtil.MainCanvas.transform);
+            ((RectTransform) this.dataScienceStationGameObject.transform).pivot = new Vector2(1.0f, 1.0f);
+            ((RectTransform) this.dataScienceStationGameObject.transform).SetAsLastSibling();
         }
 
         private void OnCloseDataScienceStation()
         {
-            // TODO
-            Debug.Log(">>>> KerbalDataAnalysisStation::OnCloseDataScienceStation: " + GetHashCode());
+            if (this.dataScienceStationGameObject != null)
+            {
+                this.dataScienceStationGameObject.SetActive(false);
+            }
         }
 
         private void OnDummyCallback()
         {
         }
 
+        private GameObject dataScienceStationGameObject;
         private ApplicationLauncherButton applicationLauncherButton;
+
+        private const string OBJ_KERBAL_DATA_ITEM = "ui_KerbalDataItem";
+        private const string OBJ_KERBAL_DATA_ITEM_POOL = "ui_KerbalDataItemPool";
+        private const string OBJ_KERBAL_DATA_SCIENCE_STATION = "ui_KerbalDataScienceStation";
+
+        private const string BUNDLE_NAME = "KerbalInstruments/UI/kerbalinstruments";
 
         private const string TOOLBAR_BUTTON_TEXTURE = "KerbalInstruments/Textures/ToolbarButtons/data-science-station";
     }
