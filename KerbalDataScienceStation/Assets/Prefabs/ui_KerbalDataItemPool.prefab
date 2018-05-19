@@ -51,3 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 1510474979, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Prefab: {fileID: 1553809718908560, guid: 0731ed7838e909e4a8df69d4984e752e, type: 2}

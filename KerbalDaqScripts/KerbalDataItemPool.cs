@@ -2,6 +2,8 @@
 
 public class KerbalDataItemPool : MonoBehaviour
 {
+    public GameObject Prefab;
+
     void Start()
     {
     }

@@ -48,5 +48,11 @@
     <Compile Include="KerbalDataItemPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="build\postbuild.bat" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cmd.exe /C ""$(ProjectDir)build\postbuild.bat" "$(TargetDir)" "$(TargetName)" "$(TargetExt)" "$(ProjectDir)" "$(SolutionDir)""</PostBuildEvent>
+  </PropertyGroup>
 </Project>
