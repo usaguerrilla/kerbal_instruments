@@ -12,6 +12,11 @@ namespace KerbalDaqScripts
             Debug.Log("KPL KerbalScienceStation::Start");
         }
 
+        internal GameObject GetDataItem()
+        {
+            return Instantiate(KerbalDataItemPrefab) as GameObject;
+        }
+
         void OnDisable()
         {
             Debug.Log("KPL KerbalScienceStation::OnDisable");

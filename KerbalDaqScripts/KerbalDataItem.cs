@@ -5,6 +5,8 @@ namespace KerbalDaqScripts
 {
     public class KerbalDataItem : MonoBehaviour
     {
+        public Toggle Toggle;
+
         public Text VesselName;
         public Text StatusName;
 

@@ -4,10 +4,47 @@ namespace KerbalDaqScripts
 {
     public class KerbalDataItemScrollView : MonoBehaviour
     {
+        public Transform ContentTransform;
         public KerbalScienceStation KerbalScienceStation;
 
         void Start()
         {
+            GameObject newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
+            newDataItem = KerbalScienceStation.GetDataItem();
+            newDataItem.transform.SetParent(ContentTransform, false);
             Debug.Log("KPL KerbalDataItemScrollView::Start");
         }
 

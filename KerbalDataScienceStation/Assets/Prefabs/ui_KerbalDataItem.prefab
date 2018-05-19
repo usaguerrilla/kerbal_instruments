@@ -174,7 +174,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &114581602679871232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 220203990, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Toggle: {fileID: 114358497995653564}
   VesselName: {fileID: 114621426231264404}
   StatusName: {fileID: 114162309457595076}
 --- !u!222 &222099766201401144
