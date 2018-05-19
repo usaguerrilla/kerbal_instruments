@@ -97,14 +97,17 @@ namespace KerbalInstruments.KerbalDaq
 
         private void AssetLoaded(AssetLoader.Loader obj)
         {
-            GameObject go = Instantiate(obj.objects[0]) as GameObject;
-            KerbalDataItem kdi = go.GetComponent<KerbalDataItem>();
-
-            Vector3 pos = this.applicationLauncherButton.GetAnchor();
-            this.dataScienceStationGameObject = Instantiate(obj.objects[2]) as GameObject;
-            this.dataScienceStationGameObject.transform.SetParent(MainCanvasUtil.MainCanvas.transform);
-            ((RectTransform) this.dataScienceStationGameObject.transform).pivot = new Vector2(1.0f, 1.0f);
-            ((RectTransform) this.dataScienceStationGameObject.transform).SetAsLastSibling();
+            for (int i = 0; i < obj.definitions.Length; ++i)
+            {
+                if (obj.definitions[i].name == OBJ_KERBAL_DATA_SCIENCE_STATION)
+                {
+                    Vector3 pos = this.applicationLauncherButton.GetAnchor();
+                    this.dataScienceStationGameObject = Instantiate(obj.objects[i]) as GameObject;
+                    this.dataScienceStationGameObject.transform.SetParent(MainCanvasUtil.MainCanvas.transform);
+                    ((RectTransform)this.dataScienceStationGameObject.transform).pivot = new Vector2(1.0f, 1.0f);
+                    ((RectTransform)this.dataScienceStationGameObject.transform).SetAsLastSibling();
+                }
+            }
         }
 
         private void OnCloseDataScienceStation()

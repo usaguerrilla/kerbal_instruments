@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<KSPBundleDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UrlName="kerbalinstruments" Name="kerbalinstruments" CreatedTime="-8586749378300710303">
+<KSPBundleDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UrlName="kerbalinstruments" Name="kerbalinstruments" CreatedTime="-8586749170284816081">
   <Author>Pavel Krupets</Author>
   <Info>Kerbal Instruments package</Info>
   <Assets>
