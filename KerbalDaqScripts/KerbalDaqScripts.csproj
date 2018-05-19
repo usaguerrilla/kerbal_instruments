@@ -43,9 +43,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExplorerScrollView.cs" />
+    <Compile Include="KerbalDataItemScrollView.cs" />
     <Compile Include="KerbalDataItem.cs" />
-    <Compile Include="KerbalDataItemPool.cs" />
+    <Compile Include="KerbalGraphView.cs" />
+    <Compile Include="KerbalScienceStation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

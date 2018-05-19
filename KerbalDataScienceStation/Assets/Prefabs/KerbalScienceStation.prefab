@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1123663279485188}
+  m_RootGameObject: {fileID: 1569970897844752}
   m_IsPrefabParent: 1
---- !u!1 &1123663279485188
+--- !u!1 &1569970897844752
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4829749915871750}
-  - component: {fileID: 114550293784012938}
+  - component: {fileID: 4614066584255646}
+  - component: {fileID: 114959031645202684}
   m_Layer: 0
-  m_Name: ui_KerbalDataItemPool
+  m_Name: KerbalScienceStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4829749915871750
+--- !u!4 &4614066584255646
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1123663279485188}
+  m_GameObject: {fileID: 1569970897844752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,15 +40,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114550293784012938
+--- !u!114 &114959031645202684
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1123663279485188}
+  m_GameObject: {fileID: 1569970897844752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1510474979, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
+  m_Script: {fileID: -1445126192, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1553809718908560, guid: 0731ed7838e909e4a8df69d4984e752e, type: 2}
+  KerbalDataItemPrefab: {fileID: 1553809718908560, guid: 0731ed7838e909e4a8df69d4984e752e,
+    type: 2}
+  KerbalScienceStationPrefab: {fileID: 1477642776158006, guid: cd5b6e49ca4b05e46aec1dc493147e5e,
+    type: 2}

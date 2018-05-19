@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<KSPBundleDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UrlName="kerbalinstruments" Name="kerbalinstruments" CreatedTime="-8586749170284816081">
+<KSPBundleDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UrlName="kerbalinstruments" Name="kerbalinstruments" CreatedTime="-8586749088555734070">
   <Author>Pavel Krupets</Author>
   <Info>Kerbal Instruments package</Info>
   <Assets>
+    <Asset Name="KerbalScienceStation" Path="Assets/Prefabs/KerbalScienceStation.prefab" Type="GameObject" Url="Prefabs/KerbalScienceStation" AutoLoad="true" />
     <Asset Name="ui_KerbalDataItem" Path="Assets/Prefabs/ui_KerbalDataItem.prefab" Type="GameObject" Url="Prefabs/ui_KerbalDataItem" AutoLoad="true" />
-    <Asset Name="ui_KerbalDataItemPool" Path="Assets/Prefabs/ui_KerbalDataItemPool.prefab" Type="GameObject" Url="Prefabs/ui_KerbalDataItemPool" AutoLoad="true" />
     <Asset Name="ui_KerbalDataScienceStation" Path="Assets/Prefabs/ui_KerbalDataScienceStation.prefab" Type="GameObject" Url="Prefabs/ui_KerbalDataScienceStation" AutoLoad="true" />
   </Assets>
   <Dependencies />

@@ -5,32 +5,46 @@ using KSP.UI.Screens;
 using KSPAssets;
 using KSPAssets.Loaders;
 
+using KerbalDaqScripts;
+
 namespace KerbalInstruments.KerbalDaq
 {
     [KSPScenario(ScenarioCreationOptions.AddToAllGames, new GameScenes[] { GameScenes.SPACECENTER })]
-    public class KerbalDataAnalysisStation : ScenarioModule
+    public class KerbalScienceStationScenarioModule : ScenarioModule
     {
         public override void OnAwake()
         {
             RegisterEvents();
+            Debug.Log("KPL KerbalScienceStationScenarioModule::OnAwake: " + GetHashCode());
         }
 
         public override void OnLoad(ConfigNode node)
         {
             // TODO
-            Debug.Log(">>>> KerbalDataAnalysisStation::OnLoad: " + GetHashCode());
+            Debug.Log("KPL KerbalScienceStationScenarioModule::OnLoad: " + GetHashCode());
         }
 
         public override void OnSave(ConfigNode node)
         {
             // TODO
-            Debug.Log(">>>> KerbalDataAnalysisStation::OnSave: " + GetHashCode());
+            Debug.Log("KPL KerbalScienceStationScenarioModule::OnSave: " + GetHashCode());
         }
 
-        public void OnDisable()
+        void Start()
         {
+            Debug.Log("KPL KerbalScienceStationScenarioModule::Start");
+        }
+
+        void OnDisable()
+        {
+            Debug.Log("KPL KerbalScienceStationScenarioModule::OnDisable");
             OnCloseDataScienceStation();
             UnregisterEvents();
+        }
+
+        void OnEnable()
+        {
+            Debug.Log("KPL KerbalScienceStationScenarioModule::OnEnable");
         }
 
         private void RegisterEvents()
@@ -80,18 +94,22 @@ namespace KerbalInstruments.KerbalDaq
 
         private void OnOpenDataScienceStation()
         {
-            if (this.dataScienceStationGameObject == null)
+            Debug.Log("KPL KerbalScienceStationScenarioModule::OnOpenDataScienceStation");
+
+            if (this.kerbalScienceStationGameObject == null)
             {
                 AssetLoader.LoadAssets(AssetLoaded, new AssetDefinition[]
                 {
-                    AssetLoader.GetAssetDefinitionWithName(BUNDLE_NAME, OBJ_KERBAL_DATA_ITEM),
-                    AssetLoader.GetAssetDefinitionWithName(BUNDLE_NAME, OBJ_KERBAL_DATA_ITEM_POOL),
                     AssetLoader.GetAssetDefinitionWithName(BUNDLE_NAME, OBJ_KERBAL_DATA_SCIENCE_STATION),
                 });
             }
-            else if (!this.dataScienceStationGameObject.activeSelf)
+            else
             {
-                this.dataScienceStationGameObject.SetActive(true);
+                KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
+                if (kerbalScienceStation != null)
+                {
+                    kerbalScienceStation.Show(MainCanvasUtil.MainCanvas.transform);
+                }
             }
         }
 
@@ -101,20 +119,27 @@ namespace KerbalInstruments.KerbalDaq
             {
                 if (obj.definitions[i].name == OBJ_KERBAL_DATA_SCIENCE_STATION)
                 {
-                    Vector3 pos = this.applicationLauncherButton.GetAnchor();
-                    this.dataScienceStationGameObject = Instantiate(obj.objects[i]) as GameObject;
-                    this.dataScienceStationGameObject.transform.SetParent(MainCanvasUtil.MainCanvas.transform);
-                    ((RectTransform)this.dataScienceStationGameObject.transform).pivot = new Vector2(1.0f, 1.0f);
-                    ((RectTransform)this.dataScienceStationGameObject.transform).SetAsLastSibling();
+                    this.kerbalScienceStationGameObject = Instantiate(obj.objects[i]) as GameObject;
+                    KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
+                    if (kerbalScienceStation != null)
+                    {
+                        kerbalScienceStation.Show(MainCanvasUtil.MainCanvas.transform);
+                    }
                 }
             }
         }
 
         private void OnCloseDataScienceStation()
         {
-            if (this.dataScienceStationGameObject != null)
+            if (this.kerbalScienceStationGameObject != null)
             {
-                this.dataScienceStationGameObject.SetActive(false);
+                Debug.Log("KPL KerbalScienceStationScenarioModule::OnCloseDataScienceStation");
+
+                KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
+                if (kerbalScienceStation != null)
+                {
+                    kerbalScienceStation.Hide();
+                }
             }
         }
 
@@ -122,12 +147,10 @@ namespace KerbalInstruments.KerbalDaq
         {
         }
 
-        private GameObject dataScienceStationGameObject;
+        private GameObject kerbalScienceStationGameObject;
         private ApplicationLauncherButton applicationLauncherButton;
 
-        private const string OBJ_KERBAL_DATA_ITEM = "ui_KerbalDataItem";
-        private const string OBJ_KERBAL_DATA_ITEM_POOL = "ui_KerbalDataItemPool";
-        private const string OBJ_KERBAL_DATA_SCIENCE_STATION = "ui_KerbalDataScienceStation";
+        private const string OBJ_KERBAL_DATA_SCIENCE_STATION = "KerbalScienceStation";
 
         private const string BUNDLE_NAME = "KerbalInstruments/UI/kerbalinstruments";
 

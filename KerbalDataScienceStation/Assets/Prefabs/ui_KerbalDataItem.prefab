@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 224762653480177756}
   - component: {fileID: 114358497995653564}
   - component: {fileID: 114581602679871232}
-  - component: {fileID: 114317800164331742}
+  - component: {fileID: 114958464628420586}
   m_Layer: 5
   m_Name: ui_KerbalDataItem
   m_TagString: Untagged
@@ -130,19 +130,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '{StatusName}'
---- !u!114 &114317800164331742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1553809718908560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1516626796, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VesselName: {fileID: 114621426231264404}
-  StatusName: {fileID: 114162309457595076}
 --- !u!114 &114358497995653564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +281,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114958464628420586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553809718908560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 220203990, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VesselName: {fileID: 114621426231264404}
+  StatusName: {fileID: 114162309457595076}
 --- !u!222 &222099766201401144
 CanvasRenderer:
   m_ObjectHideFlags: 1

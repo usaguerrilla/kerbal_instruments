@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KerbalDaqModule.cs" />
-    <Compile Include="KerbalDataAnalysisStation.cs" />
+    <Compile Include="KerbalScienceStationScenarioModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

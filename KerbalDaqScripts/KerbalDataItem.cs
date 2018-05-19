@@ -1,16 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class KerbalDataItem : MonoBehaviour
+namespace KerbalDaqScripts
 {
-    public Text VesselName;
-    public Text StatusName;
-
-    void Start()
+    public class KerbalDataItem : MonoBehaviour
     {
-    }
+        public Text VesselName;
+        public Text StatusName;
 
-    void Update()
-    {
+        void Start()
+        {
+            Debug.Log("KPL KerbalDataItem::Start");
+        }
+
+        void OnDisable()
+        {
+            Debug.Log("KPL KerbalDataItem::OnDisable");
+        }
+
+        void OnEnable()
+        {
+            Debug.Log("KPL KerbalDataItem::OnEnable");
+        }
     }
 }
