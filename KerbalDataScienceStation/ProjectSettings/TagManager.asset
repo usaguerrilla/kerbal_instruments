@@ -13,30 +13,30 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PartsList_Icons
+  - Atmosphere
+  - Scaled Scenery
+  - UIDialog
+  - UIVectors
+  - UI_Mask
+  - Screens
+  - Local Scenery
+  - Kerbals
+  - EVA
+  - SkySphere
+  - PhysicalObjects
+  - Internal Space
+  - Part Triggers
+  - KerbalInstructors
+  - ScaledSpaceSun
+  - MapFX
+  - UIAdditional
+  - WheelCollidersIgnore
+  - WheelColliders
+  - TerrainColliders
+  - DragRender
+  - SurfaceFX
+  - Vectors
   m_SortingLayers:
   - name: Default
     uniqueID: 0

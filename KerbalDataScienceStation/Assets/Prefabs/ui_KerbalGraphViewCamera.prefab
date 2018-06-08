@@ -20,9 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4180596402832646}
   - component: {fileID: 20677669567371820}
-  - component: {fileID: 124269397987798264}
-  - component: {fileID: 92316372652917538}
-  - component: {fileID: 81235982235508548}
   m_Layer: 5
   m_Name: ui_KerbalGraphViewCamera
   m_TagString: Untagged
@@ -79,24 +76,3 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &81235982235508548
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852066101926782}
-  m_Enabled: 1
---- !u!92 &92316372652917538
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852066101926782}
-  m_Enabled: 1
---- !u!124 &124269397987798264
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852066101926782}
-  m_Enabled: 1
