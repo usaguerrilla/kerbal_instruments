@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<KSPBundleDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UrlName="kerbalinstruments" Name="kerbalinstruments" CreatedTime="-8586749088555734070">
+<KSPBundleDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UrlName="kerbalinstruments" Name="kerbalinstruments" CreatedTime="-8586731235677852368">
   <Author>Pavel Krupets</Author>
   <Info>Kerbal Instruments package</Info>
   <Assets>
     <Asset Name="KerbalScienceStation" Path="Assets/Prefabs/KerbalScienceStation.prefab" Type="GameObject" Url="Prefabs/KerbalScienceStation" AutoLoad="true" />
     <Asset Name="ui_KerbalDataItem" Path="Assets/Prefabs/ui_KerbalDataItem.prefab" Type="GameObject" Url="Prefabs/ui_KerbalDataItem" AutoLoad="true" />
     <Asset Name="ui_KerbalDataScienceStation" Path="Assets/Prefabs/ui_KerbalDataScienceStation.prefab" Type="GameObject" Url="Prefabs/ui_KerbalDataScienceStation" AutoLoad="true" />
+    <Asset Name="ui_KerbalGraphRenderTexture" Path="Assets/Prefabs/ui_KerbalGraphRenderTexture.renderTexture" Type="RenderTexture" Url="Prefabs/ui_KerbalGraphRenderTexture" AutoLoad="true" />
+    <Asset Name="ui_KerbalGraphViewCamera" Path="Assets/Prefabs/ui_KerbalGraphViewCamera.prefab" Type="GameObject" Url="Prefabs/ui_KerbalGraphViewCamera" AutoLoad="true" />
   </Assets>
   <Dependencies />
 </KSPBundleDefinition>
