@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace KerbalDaqScripts
 {
@@ -29,10 +30,8 @@ namespace KerbalDaqScripts
 
         public void Show(Transform transform)
         {
-            if (this.kerbalScienceStation == null)
-            {
-                this.kerbalScienceStation = Instantiate(KerbalScienceStationPrefab) as GameObject;
-            }
+            // no caching for now as canvas scaling doesn't work on 2nd and futher calls.
+            this.kerbalScienceStation = Instantiate(KerbalScienceStationPrefab) as GameObject;
             this.kerbalScienceStation.transform.SetParent(transform);
             ((RectTransform) this.kerbalScienceStation.transform).pivot = new Vector2(1.0f, 1.0f);
             ((RectTransform) this.kerbalScienceStation.transform).SetAsLastSibling();
