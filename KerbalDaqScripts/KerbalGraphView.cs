@@ -17,7 +17,8 @@ namespace KerbalDaqScripts
 
         void Start()
         {
-            Debug.Log("KPL KerbalGraphView::Start");
+            KerbalGraphRenderTexture.width = (int) (((RectTransform) KerbalGraphRawImage.transform).rect.width + 0.5f);
+            KerbalGraphRenderTexture.height = (int) (((RectTransform)KerbalGraphRawImage.transform).rect.height + 0.5f);
             KerbalGraphViewCamera.transform.SetParent(Camera.main.transform, false);
         }
 
