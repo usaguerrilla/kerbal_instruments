@@ -53,5 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KerbalDataItemPrefab: {fileID: 1553809718908560, guid: 0731ed7838e909e4a8df69d4984e752e,
     type: 2}
-  KerbalScienceStationPrefab: {fileID: 1477642776158006, guid: cd5b6e49ca4b05e46aec1dc493147e5e,
+  KerbalScienceStationPrefab: {fileID: 1862376043391854, guid: cd5b6e49ca4b05e46aec1dc493147e5e,
     type: 2}

@@ -28,13 +28,19 @@ namespace KerbalDaqScripts
             Debug.Log("KPL KerbalScienceStation::OnEnable");
         }
 
-        public void Show(Transform transform)
+        public void Show(float scale)
         {
-            // no caching for now as canvas scaling doesn't work on 2nd and futher calls.
-            this.kerbalScienceStation = Instantiate(KerbalScienceStationPrefab) as GameObject;
-            this.kerbalScienceStation.transform.SetParent(transform);
+            if (this.kerbalScienceStation == null)
+            {
+                this.kerbalScienceStation = Instantiate(KerbalScienceStationPrefab) as GameObject;
+            }
+
+            CanvasScaler canvasScaler = this.kerbalScienceStation.GetComponent<CanvasScaler>();
+            canvasScaler.scaleFactor = scale;
+
             ((RectTransform) this.kerbalScienceStation.transform).pivot = new Vector2(1.0f, 1.0f);
             ((RectTransform) this.kerbalScienceStation.transform).SetAsLastSibling();
+
             this.gameObject.SetActive(true);
             this.kerbalScienceStation.SetActive(true);
         }

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+using KSP.UI;
 using KSP.UI.Screens;
 
 using KSPAssets;
@@ -108,7 +110,7 @@ namespace KerbalInstruments.KerbalDaq
                 KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
                 if (kerbalScienceStation != null)
                 {
-                    kerbalScienceStation.Show(MainCanvasUtil.MainCanvas.transform);
+                    kerbalScienceStation.Show(UIMasterController.Instance.uiScale);
                 }
             }
         }
@@ -123,7 +125,7 @@ namespace KerbalInstruments.KerbalDaq
                     KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
                     if (kerbalScienceStation != null)
                     {
-                        kerbalScienceStation.Show(MainCanvasUtil.MainCanvas.transform);
+                        kerbalScienceStation.Show(UIMasterController.Instance.uiScale);
                     }
                 }
             }
