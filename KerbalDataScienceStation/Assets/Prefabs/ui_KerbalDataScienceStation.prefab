@@ -628,6 +628,8 @@ MonoBehaviour:
   GraphViewRawImage: {fileID: 114005147494280636}
   GraphViewRenderTexture: {fileID: 8400000, guid: 9078b6dac63bc0d439af60d2862c0d95,
     type: 2}
+  GraphViewLinesRootObjectPrefab: {fileID: 1846630104322336, guid: 4be65a01ec29c184bb533d92538f2809,
+    type: 2}
 --- !u!222 &222356652937008570
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace KerbalDaqScripts
@@ -17,10 +16,11 @@ namespace KerbalDaqScripts
         public Camera GraphViewCamera;
         public RawImage GraphViewRawImage;
         public RenderTexture GraphViewRenderTexture;
+        public GameObject GraphViewLinesRootObjectPrefab;
 
         void Update()
         {
-            // GraphViewCamera.Render();
+            GraphViewCamera.Render();
         }
 
         void Start()
@@ -39,6 +39,13 @@ namespace KerbalDaqScripts
             ((RectTransform) transform).SetAsLastSibling();
 
             this.gameObject.SetActive(true);
+
+            /*
+             * Add lines so they are visible in the camera
+             *
+            this.linesRootObject = Instantiate<GameObject>(GraphViewLinesRootObjectPrefab);
+            this.linesRootObject.SetActive(true);
+            */
         }
 
         private void OnHide()
@@ -53,5 +60,7 @@ namespace KerbalDaqScripts
         {
             this.gameObject.SetActive(false);
         }
+
+        private GameObject linesRootObject;
     }
 }
