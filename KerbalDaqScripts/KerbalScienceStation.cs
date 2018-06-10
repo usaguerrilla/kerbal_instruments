@@ -1,56 +1,57 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace KerbalDaqScripts
 {
     public class KerbalScienceStation : MonoBehaviour
     {
-        public GameObject KerbalDataItemPrefab;
-        public GameObject KerbalScienceStationPrefab;
+        public delegate void OnClosed();
+        public event OnClosed OnClosedEvent;
+
+        public Button ToolbarCloseButton;
+
+        public GameObject DataItemPrefab;
+        public Transform DataItemsScrollViewContentTransform;
+
+        public Camera GraphViewCamera;
+        public RawImage GraphViewRawImage;
+        public RenderTexture GraphViewRenderTexture;
+
+        void Update()
+        {
+            // GraphViewCamera.Render();
+        }
 
         void Start()
         {
-            Debug.Log("KPL KerbalScienceStation::Start");
-        }
-
-        internal GameObject GetDataItem()
-        {
-            return Instantiate(KerbalDataItemPrefab) as GameObject;
-        }
-
-        void OnDisable()
-        {
-            Debug.Log("KPL KerbalScienceStation::OnDisable");
-        }
-
-        void OnEnable()
-        {
-            Debug.Log("KPL KerbalScienceStation::OnEnable");
+            GraphViewRenderTexture.width = (int)(((RectTransform) GraphViewRawImage.transform).rect.width + 0.5f);
+            GraphViewRenderTexture.height = (int)(((RectTransform) GraphViewRawImage.transform).rect.height + 0.5f);
+            ToolbarCloseButton.onClick.AddListener(OnHide);
         }
 
         public void Show(float scale)
         {
-            if (this.kerbalScienceStation == null)
-            {
-                this.kerbalScienceStation = Instantiate(KerbalScienceStationPrefab) as GameObject;
-            }
-
-            CanvasScaler canvasScaler = this.kerbalScienceStation.GetComponent<CanvasScaler>();
+            CanvasScaler canvasScaler = GetComponent<CanvasScaler>();
             canvasScaler.scaleFactor = scale;
 
-            ((RectTransform) this.kerbalScienceStation.transform).pivot = new Vector2(1.0f, 1.0f);
-            ((RectTransform) this.kerbalScienceStation.transform).SetAsLastSibling();
+            ((RectTransform) transform).pivot = new Vector2(1.0f, 1.0f);
+            ((RectTransform) transform).SetAsLastSibling();
 
             this.gameObject.SetActive(true);
-            this.kerbalScienceStation.SetActive(true);
+        }
+
+        private void OnHide()
+        {
+            if (this.gameObject.activeSelf)
+            {
+                OnClosedEvent?.Invoke();
+            }
         }
 
         public void Hide()
         {
-            this.kerbalScienceStation.SetActive(false);
             this.gameObject.SetActive(false);
         }
-
-        private GameObject kerbalScienceStation;
     }
 }

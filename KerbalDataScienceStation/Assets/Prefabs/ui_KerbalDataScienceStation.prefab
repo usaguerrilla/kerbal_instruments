@@ -73,9 +73,8 @@ GameObject:
   - component: {fileID: 224821477122598158}
   - component: {fileID: 222356652937008570}
   - component: {fileID: 114005147494280636}
-  - component: {fileID: 114718955800468520}
   m_Layer: 5
-  m_Name: ui_KerbalGraphRawImage
+  m_Name: ui_KerbalGraphViewRawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,9 +105,26 @@ GameObject:
   - component: {fileID: 224339501584147322}
   - component: {fileID: 114672474927479758}
   - component: {fileID: 114711650273681320}
-  - component: {fileID: 114717554156663238}
   m_Layer: 5
   m_Name: ui_KerbalDataItemScrollView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1526813365735848
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224919734604202024}
+  - component: {fileID: 222816241860765006}
+  - component: {fileID: 114049801245584748}
+  - component: {fileID: 114835391419843132}
+  m_Layer: 5
+  m_Name: ui_CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,6 +194,7 @@ GameObject:
   - component: {fileID: 223868048539026390}
   - component: {fileID: 114482308586853528}
   - component: {fileID: 114195021614120728}
+  - component: {fileID: 114993954233837058}
   m_Layer: 5
   m_Name: ui_KerbalDataScienceStation
   m_TagString: Untagged
@@ -231,6 +248,33 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114049801245584748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526813365735848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -453,7 +497,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -496,38 +540,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
---- !u!114 &114717554156663238
+--- !u!114 &114835391419843132
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1417088261728018}
+  m_GameObject: {fileID: 1526813365735848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1516931036, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ContentTransform: {fileID: 224339501584147322}
-  KerbalScienceStation: {fileID: 114959031645202684, guid: d952c619e8adaa341a70c36bdeb52954,
-    type: 2}
---- !u!114 &114718955800468520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1195178099503100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 705943767, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KerbalGraphViewCamera: {fileID: 20677669567371820, guid: b7ab7c3b5d50ab448939a83ee4366a48,
-    type: 2}
-  KerbalGraphRawImage: {fileID: 114005147494280636}
-  KerbalGraphRenderTexture: {fileID: 8400000, guid: 9078b6dac63bc0d439af60d2862c0d95,
-    type: 2}
-  KerbalScienceStation: {fileID: 114959031645202684, guid: d952c619e8adaa341a70c36bdeb52954,
-    type: 2}
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114049801245584748}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114866694122163734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -555,6 +608,26 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114993954233837058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862376043391854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1445126192, guid: cce44208de6c0e04db3aa25ae2e9fc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolbarCloseButton: {fileID: 114835391419843132}
+  DataItemPrefab: {fileID: 1553809718908560, guid: 0731ed7838e909e4a8df69d4984e752e,
+    type: 2}
+  DataItemsScrollViewContentTransform: {fileID: 224339501584147322}
+  GraphViewCamera: {fileID: 20677669567371820, guid: b7ab7c3b5d50ab448939a83ee4366a48,
+    type: 2}
+  GraphViewRawImage: {fileID: 114005147494280636}
+  GraphViewRenderTexture: {fileID: 8400000, guid: 9078b6dac63bc0d439af60d2862c0d95,
+    type: 2}
 --- !u!222 &222356652937008570
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -579,6 +652,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170656813376248}
+--- !u!222 &222816241860765006
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526813365735848}
 --- !u!222 &222843858399396784
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -687,7 +766,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: -150, y: -32}
+  m_SizeDelta: {x: -150, y: -34}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224339501584147322
 RectTransform:
@@ -790,15 +869,34 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 224919734604202024}
   m_Father: {fileID: 224935409280222332}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 150, y: -32}
-  m_SizeDelta: {x: -150, y: 32}
+  m_AnchoredPosition: {x: 150, y: -34}
+  m_SizeDelta: {x: -150, y: 34}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &224919734604202024
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526813365735848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224885929115819584}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -17, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224935409280222332
 RectTransform:
   m_ObjectHideFlags: 1

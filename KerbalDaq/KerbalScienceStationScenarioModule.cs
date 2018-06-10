@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 using KSP.UI;
 using KSP.UI.Screens;
 
@@ -107,12 +106,23 @@ namespace KerbalInstruments.KerbalDaq
             }
             else
             {
-                KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
-                if (kerbalScienceStation != null)
-                {
-                    kerbalScienceStation.Show(UIMasterController.Instance.uiScale);
-                }
+                OpenDataScienceStation();
             }
+        }
+
+        private void OpenDataScienceStation()
+        {
+            KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
+            if (kerbalScienceStation != null)
+            {
+                kerbalScienceStation.OnClosedEvent += OnDataScienceStationClosed;
+                kerbalScienceStation.Show(UIMasterController.Instance.uiScale);
+            }
+        }
+
+        private void OnDataScienceStationClosed()
+        {
+            this.applicationLauncherButton.SetFalse();
         }
 
         private void AssetLoaded(AssetLoader.Loader obj)
@@ -122,11 +132,7 @@ namespace KerbalInstruments.KerbalDaq
                 if (obj.definitions[i].name == OBJ_KERBAL_DATA_SCIENCE_STATION)
                 {
                     this.kerbalScienceStationGameObject = Instantiate(obj.objects[i]) as GameObject;
-                    KerbalScienceStation kerbalScienceStation = this.kerbalScienceStationGameObject.GetComponent<KerbalScienceStation>();
-                    if (kerbalScienceStation != null)
-                    {
-                        kerbalScienceStation.Show(UIMasterController.Instance.uiScale);
-                    }
+                    OpenDataScienceStation();
                 }
             }
         }
@@ -152,7 +158,7 @@ namespace KerbalInstruments.KerbalDaq
         private GameObject kerbalScienceStationGameObject;
         private ApplicationLauncherButton applicationLauncherButton;
 
-        private const string OBJ_KERBAL_DATA_SCIENCE_STATION = "KerbalScienceStation";
+        private const string OBJ_KERBAL_DATA_SCIENCE_STATION = "ui_KerbalDataScienceStation";
 
         private const string BUNDLE_NAME = "KerbalInstruments/UI/kerbalinstruments";
 
